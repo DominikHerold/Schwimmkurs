@@ -41,9 +41,8 @@ namespace Schwimmkurs
                 var content = GetContent();
                 var htmlDoc = new HtmlDocument();
                 htmlDoc.LoadHtml(content);
-                var captionDiv = htmlDoc.DocumentNode.SelectNodes("//div[@class='slide_opener noselectmark']").Single();
-                var parentDiv = captionDiv.ParentNode;
-                var innerText = parentDiv.InnerText;
+                var captionDiv = htmlDoc.DocumentNode.SelectNodes("//div[@class='block overflow-x-auto p-5 -m-5']").Single();
+                var innerText = captionDiv.InnerText;
                 if (innerText == SwimContent)
                     return;
 
